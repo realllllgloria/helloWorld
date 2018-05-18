@@ -45,7 +45,7 @@ public class Menu {
 	public Menu() {
 		initialize();
 	}
-
+ 
 	/**
 	 * Initialize the contents of the frame.
 	 */
