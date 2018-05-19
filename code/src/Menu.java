@@ -120,6 +120,7 @@ public class Menu {
 		btnHard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//FOR GLORIA
+				frame.dispose();
 				new Main("board3.txt");
 			}
 		});
@@ -130,6 +131,7 @@ public class Menu {
 		btnMedium.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//FOR GLORIA
+				frame.dispose();
 				new Main("board2.txt");
 			}
 		});
@@ -140,6 +142,7 @@ public class Menu {
 		btnEasy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//FOR GLORIA
+				frame.dispose();
 				new Main("board1.txt");
 			}
 		});

@@ -73,7 +73,7 @@ public class Main extends JFrame {
         gameBoard.updateUI();
     }
 
-    public static void main(String args[]) {
-        new Main("board1.txt");
-    }
+//    public static void main(String args[]) {
+//        new Main("board1.txt");
+//    }
 }
