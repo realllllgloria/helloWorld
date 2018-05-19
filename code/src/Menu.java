@@ -22,6 +22,9 @@ public class Menu {
 //	private JPanel pnlMain;
 //	private JPanel pnlOption;
 //	private JPanel pnlDifficulty;
+	public JFrame getFrame() {
+		return frame;
+	}
 
 	/**
 	 * Launch the application.
@@ -120,7 +123,8 @@ public class Menu {
 		btnHard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//FOR GLORIA
-				frame.dispose();
+				//frame.dispose();
+				frame.setVisible(false);
 				new Main("board3.txt");
 			}
 		});
@@ -131,7 +135,8 @@ public class Menu {
 		btnMedium.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//FOR GLORIA
-				frame.dispose();
+				//frame.dispose();
+				frame.setVisible(false);
 				new Main("board2.txt");
 			}
 		});
@@ -142,7 +147,8 @@ public class Menu {
 		btnEasy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//FOR GLORIA
-				frame.dispose();
+				//frame.dispose();
+				frame.setVisible(false);
 				new Main("board1.txt");
 			}
 		});

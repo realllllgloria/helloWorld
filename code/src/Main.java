@@ -20,7 +20,7 @@ public class Main extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setLayout(new BorderLayout());
+        getContentPane().setLayout(new BorderLayout());
         BufferedImage myImage = null;
 
         try {
@@ -30,13 +30,13 @@ public class Main extends JFrame {
         }
 
         setContentPane(new JLabel(new ImageIcon(myImage)));
-        setLayout(null);
+        getContentPane().setLayout(null);
 
         gameBoard = new JPanel();
         gameBoard.setSize(new java.awt.Dimension(Board.W * Unit.W, Board.H * Unit.H));
         gameBoard.setLocation(15, 0);
         gameBoard.setOpaque(false);
-        add(gameBoard);
+        getContentPane().add(gameBoard);
         gameBoard.setLayout(null);
 
         //* CHANGED
@@ -44,7 +44,7 @@ public class Main extends JFrame {
         infoBoard.setSize(new java.awt.Dimension(Board.W * Unit.W, 200));
         infoBoard.setLocation(15, 710);
         infoBoard.setOpaque(false);
-        add(infoBoard);
+        getContentPane().add(infoBoard);
         JButton btnRestart = new JButton("Restart");
         btnRestart.addActionListener(new ActionListener() {
             @Override
@@ -52,7 +52,19 @@ public class Main extends JFrame {
                 restart();
             }
         });
+        infoBoard.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         infoBoard.add(btnRestart);
+        
+        JButton btmHome = new JButton("Home");
+        btmHome.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		dispose();
+        		//new Menu();
+        		Menu newMenu = new Menu();
+        		newMenu.getFrame().setVisible(true);
+        	}
+        });
+        infoBoard.add(btmHome);
         //* CHANGED end
 
         setSize(Board.W * Unit.W + 30, Board.H * Unit.H + 220);
