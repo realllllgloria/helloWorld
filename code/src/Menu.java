@@ -159,7 +159,7 @@ public class Menu {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pnlDifficulty.setVisible(false);
-				pnlMain.setVisible(true);
+				pnlMain.setVisible(true); 
 			}
 		});
 		btnHome.setBounds(159, 200, 97, 25);
