@@ -42,10 +42,10 @@ class BlockList {
                     startPosition = cols[1],
                     endPosition = cols[2],
                     direction = cols[3];
-            int spRow = Integer.valueOf(startPosition.split("-")[1]);
-            int spCol = Integer.valueOf(startPosition.split("-")[0]);
-            int epRow = Integer.valueOf(endPosition.split("-")[1]);
-            int epCol = Integer.valueOf(endPosition.split("-")[0]);
+            int spRow = Integer.valueOf(startPosition.split("-")[0]);
+            int spCol = Integer.valueOf(startPosition.split("-")[1]);
+            int epRow = Integer.valueOf(endPosition.split("-")[0]);
+            int epCol = Integer.valueOf(endPosition.split("-")[1]);
             int len = 1;
             boolean vertical = direction.equals("UPDOWN");
             if (vertical) len = epRow - spRow; // length could be negative, that's ok.
