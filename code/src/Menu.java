@@ -149,7 +149,7 @@ public class Menu {
 				//FOR GLORIA
 				//frame.dispose();
 				frame.setVisible(false);
-				new Main("board1.txt");
+				new Main("src/Board1.txt");
 			}
 		});
 		btnEasy.setBounds(159, 41, 97, 25);

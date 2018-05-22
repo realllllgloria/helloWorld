@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,7 +18,19 @@ class BlockList {
 
     static void loadBoard(String filename) {
         ArrayList<Block> blks = new ArrayList<>();
-        Scanner scanner = new Scanner(BlockList.class.getResourceAsStream(filename));
+//        Scanner scanner = new Scanner(BlockList.class.getResourceAsStream(filename));
+        
+
+        File file = new File(filename);
+        Scanner scanner = null;
+		try {
+			scanner = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
         while (scanner.hasNext()) {
             String line = scanner.nextLine();
             String[] cols = line.split(", ");
