@@ -125,7 +125,7 @@ public class Menu {
 				//FOR GLORIA
 				//frame.dispose();
 				frame.setVisible(false);
-				new Main("board3.txt");
+				new Main("src/board3.txt");
 			}
 		});
 		btnHard.setBounds(159, 146, 97, 25);
@@ -137,7 +137,7 @@ public class Menu {
 				//FOR GLORIA
 				//frame.dispose();
 				frame.setVisible(false);
-				new Main("board2.txt");
+				new Main("src/board2.txt");
 			}
 		});
 		btnMedium.setBounds(159, 91, 97, 25);
