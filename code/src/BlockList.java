@@ -29,7 +29,10 @@ class BlockList {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		if (scanner == null) {
+			
+			System.out.println("!!!!");
+		}
 		
         while (scanner.hasNext()) {
             String line = scanner.nextLine();
