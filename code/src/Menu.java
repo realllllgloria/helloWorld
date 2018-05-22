@@ -1,5 +1,6 @@
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import project.Generator;
 
 import java.awt.EventQueue;
 import javax.sound.sampled.*;
@@ -125,7 +126,8 @@ public class Menu {
 				//FOR GLORIA
 				//frame.dispose();
 				frame.setVisible(false);
-				new Main("src/board3.txt");
+//				new Main("src/board3.txt");
+				new Main("src/project/boards/Easy.txt");
 			}
 		});
 		btnHard.setBounds(159, 146, 97, 25);
@@ -137,7 +139,8 @@ public class Menu {
 				//FOR GLORIA
 				//frame.dispose();
 				frame.setVisible(false);
-				new Main("src/board2.txt");
+//				new Main("src/board2.txt");
+				new Main("src/project/boards/Easy.txt");
 			}
 		});
 		btnMedium.setBounds(159, 91, 97, 25);
@@ -149,7 +152,13 @@ public class Menu {
 				//FOR GLORIA
 				//frame.dispose();
 				frame.setVisible(false);
-				new Main("src/Easy.txt");
+				try {
+					new Generator();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				new Main("src/project/boards/Easy.txt");
 			}
 		});
 		btnEasy.setBounds(159, 41, 97, 25);
