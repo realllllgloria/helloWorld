@@ -167,16 +167,20 @@ public class Menu {
 
 
 
-		JButton btnMute = new JButton("Mute");
+		JButton btnMute = new JButton("Music off");
 		btnMute.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (clip.isRunning()) {
 					clip.stop();
+					btnMute.setText("Music On");
 				} else {
 					clip.start();
+					btnMute.setText("Music Off");
 				}
 			}
 		});
+		
+		
 		btnMute.setBounds(152, 34, 97, 25);
 		pnlOption.add(btnMute);
 
