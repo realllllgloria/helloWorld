@@ -17,7 +17,7 @@ public class Generator {
 	 * @param args
 	 * @throws IOException 
 	 */
-	public Generator() throws IOException {
+	public Generator(String diffLevel) throws IOException {
 		/* Get files and create board from file */
 //	    File[] files = new File(System.getProperty("user.dir") + "/src/project/Boards").listFiles();
 //	    for (File file : files) {
@@ -28,7 +28,7 @@ public class Generator {
 //	    		}
 //	    }
 		
-		Puzzle p = genPuzzle("Easy");
+		Puzzle p = genPuzzle(diffLevel);
 		State s = new State(null, p.getCars());
 //		s.showCars();
 		System.out.println("Start position:");
@@ -38,10 +38,10 @@ public class Generator {
 		System.out.println();
 //		s.showCars();
 //		s.showBoard();
-		s.shufflePuzzle("Hard");
+		s.shufflePuzzle(diffLevel);
 		System.out.println("End position:");
 		s.showBoard();
-		s.toFile("Easy");
+		s.toFile(diffLevel);
 
 	}
 	

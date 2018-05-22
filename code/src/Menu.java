@@ -127,19 +127,31 @@ public class Menu {
 				//frame.dispose();
 				frame.setVisible(false);
 //				new Main("src/board3.txt");
+				try {
+					new Generator("Hard");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				new Main("src/project/boards/Easy.txt");
 			}
 		});
 		btnHard.setBounds(159, 146, 97, 25);
 		pnlDifficulty.add(btnHard);
 
-		JButton btnMedium = new JButton("Medium");
+		JButton btnMedium = new JButton("Normal");
 		btnMedium.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//FOR GLORIA
 				//frame.dispose();
 				frame.setVisible(false);
 //				new Main("src/board2.txt");
+				try {
+					new Generator("Normal");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				new Main("src/project/boards/Easy.txt");
 			}
 		});
@@ -153,7 +165,7 @@ public class Menu {
 				//frame.dispose();
 				frame.setVisible(false);
 				try {
-					new Generator();
+					new Generator("Easy");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
