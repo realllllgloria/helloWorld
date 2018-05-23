@@ -25,6 +25,7 @@ public class Main extends JFrame {
 
         try {
             myImage = ImageIO.read(Main.class.getResourceAsStream("1.jpg"));
+//            myImage = ImageIO.read(Main.class.getResourceAsStream("2.jpg"));
         } catch (IOException ex) {
             System.out.println("Could not find the file");
         }
@@ -73,6 +74,9 @@ public class Main extends JFrame {
         restart();
     }
 
+    /**
+     * This restarts the game
+     */
     private void restart() {
         for (Component c : gameBoard.getComponents())
             gameBoard.remove(c);

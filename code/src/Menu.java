@@ -133,7 +133,7 @@ public class Menu {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				new Main("src/project/boards/Easy.txt");
+				new Main("src/project/boards/Hard.txt");
 			}
 		});
 		btnHard.setBounds(159, 146, 97, 25);
@@ -152,7 +152,7 @@ public class Menu {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				new Main("src/project/boards/Easy.txt");
+				new Main("src/project/boards/Normal.txt");
 			}
 		});
 		btnMedium.setBounds(159, 91, 97, 25);
