@@ -125,7 +125,7 @@ public class Menu {
 			public void actionPerformed(ActionEvent e) {
 				//FOR GLORIA
 				//frame.dispose();
-				frame.setVisible(false);
+				//frame.setVisible(false);
 //				new Main("src/board3.txt");
 				try {
 					new Generator("Hard");
