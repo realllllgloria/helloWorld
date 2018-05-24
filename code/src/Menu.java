@@ -1,16 +1,11 @@
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import project.Generator;
 
-import java.awt.EventQueue;
+import java.awt.*;
+import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
-import javax.swing.JFrame;
-import java.awt.CardLayout;
-import javax.swing.JPanel;
-import javax.swing.JButton;
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 
@@ -49,7 +44,7 @@ public class Menu {
 	public Menu() {
 		initialize();
 	}
- 
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -68,7 +63,7 @@ public class Menu {
 //		player.play();
 
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Zheng Cui\\eclipse-workspace\\COMP2511 Project\\icon.jpg"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("icon.jpg"));
 		frame.setTitle("\u5403\u9E21666");
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -88,6 +83,11 @@ public class Menu {
 		frame.getContentPane().add(pnlOption, "name_48861624405630");
 		pnlOption.setLayout(null);
 		pnlOption.setVisible(false);
+
+		final JPanel pnlBackgrounds = new JPanel();
+		frame.getContentPane().add(pnlBackgrounds, "name_48861624405631");
+        pnlBackgrounds.setLayout(new GridLayout(3,2));
+        pnlBackgrounds.setVisible(false);
 
 		JButton btnOpt = new JButton("Options");
 		btnOpt.addActionListener(new ActionListener() {
@@ -119,13 +119,12 @@ public class Menu {
 		pnlMain.add(btnDdiff);
 
 
-
 		JButton btnHard = new JButton("Hard");
 		btnHard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//FOR GLORIA
 				//frame.dispose();
-				//frame.setVisible(false);
+				frame.setVisible(false);
 //				new Main("src/board3.txt");
 				try {
 					new Generator("Hard");
@@ -180,13 +179,11 @@ public class Menu {
 		btnHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pnlDifficulty.setVisible(false);
-				pnlMain.setVisible(true); 
+				pnlMain.setVisible(true);
 			}
 		});
 		btnHome.setBounds(159, 200, 97, 25);
 		pnlDifficulty.add(btnHome);
-
-
 
 		JButton btnMute = new JButton("Music off");
 		btnMute.addActionListener(new ActionListener() {
@@ -200,12 +197,47 @@ public class Menu {
 				}
 			}
 		});
-		
-		
+
 		btnMute.setBounds(152, 34, 97, 25);
 		pnlOption.add(btnMute);
 
-		JButton btnOption2 = new JButton("Option2");
+		for (int i = 1; i <= 4; ++i) {
+			JButton btnBackground = new JButton();
+			final String name = Integer.toString(i) + ".jpg";
+			try {
+				btnBackground.setIcon(new ImageIcon(ImageIO.read(getClass().getResource(name)).getScaledInstance(100, 70, Image.SCALE_SMOOTH)));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			btnBackground.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					Board.backgroundImage = getClass().getResourceAsStream(name);
+                    pnlBackgrounds.setVisible(false);
+                    pnlOption.setVisible(true);
+                }
+			});
+			pnlBackgrounds.add(btnBackground);
+		}
+
+		JButton btnHome_3 = new JButton("Back");
+		btnHome_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pnlBackgrounds.setVisible(false);
+				pnlOption.setVisible(true);
+			}
+		});
+		pnlBackgrounds.add(btnHome_3);
+
+
+		JButton btnOption2 = new JButton("Background");
+		btnOption2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pnlOption.setVisible(false);
+				pnlBackgrounds.setVisible(true);
+			}
+		});
+
 		btnOption2.setBounds(152, 80, 97, 25);
 		pnlOption.add(btnOption2);
 
