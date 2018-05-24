@@ -200,25 +200,85 @@ public class Menu {
 
 		btnMute.setBounds(152, 34, 97, 25);
 		pnlOption.add(btnMute);
-
-		for (int i = 1; i <= 4; ++i) {
-			JButton btnBackground = new JButton();
-			final String name = Integer.toString(i) + ".jpg";
-			try {
-				btnBackground.setIcon(new ImageIcon(ImageIO.read(getClass().getResource(name)).getScaledInstance(100, 70, Image.SCALE_SMOOTH)));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			btnBackground.addActionListener(new ActionListener() {
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					Board.backgroundImage = getClass().getResourceAsStream(name);
-                    pnlBackgrounds.setVisible(false);
-                    pnlOption.setVisible(true);
-                }
-			});
-			pnlBackgrounds.add(btnBackground);
+		
+		//Zheng's bg 1 button start
+		JButton btnBackground1 = new JButton();
+		final String name1 = "1.jpg";
+		try {
+			btnBackground1.setIcon(new ImageIcon(ImageIO.read(getClass().getResource(name1)).getScaledInstance(100, 70, Image.SCALE_SMOOTH)));
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		btnBackground1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Board.backgroundImage = getClass().getResourceAsStream(name1);
+                pnlBackgrounds.setVisible(false);
+                pnlOption.setVisible(true);
+            }
+		});
+		pnlBackgrounds.add(btnBackground1);
+		//Zheng's bg 1 button ends
+		
+		
+		//Zheng's bg 2 button start
+		JButton btnBackground2 = new JButton();
+		final String name2 = "2.jpg";
+		try {
+			btnBackground2.setIcon(new ImageIcon(ImageIO.read(getClass().getResource(name2)).getScaledInstance(100, 70, Image.SCALE_SMOOTH)));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		btnBackground2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Board.backgroundImage = getClass().getResourceAsStream(name2);
+                pnlBackgrounds.setVisible(false);
+                pnlOption.setVisible(true);
+            }
+		});
+		pnlBackgrounds.add(btnBackground2);
+		//Zheng's bg 2 button ends
+
+		//Zheng's bg 3 button start
+		JButton btnBackground3 = new JButton();
+		final String name3 = "3.jpg";
+		try {
+			btnBackground3.setIcon(new ImageIcon(ImageIO.read(getClass().getResource(name3)).getScaledInstance(100, 70, Image.SCALE_SMOOTH)));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		btnBackground3.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Board.backgroundImage = getClass().getResourceAsStream(name3);
+                pnlBackgrounds.setVisible(false);
+                pnlOption.setVisible(true);
+            }
+		});
+		pnlBackgrounds.add(btnBackground3);
+		//Zheng's bg 3 button ends
+		
+		//Zheng's bg 3 button start
+		JButton btnBackground4 = new JButton();
+		final String name4 = "4.jpg";
+		try {
+			btnBackground4.setIcon(new ImageIcon(ImageIO.read(getClass().getResource(name4)).getScaledInstance(100, 70, Image.SCALE_SMOOTH)));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		btnBackground4.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Board.backgroundImage = getClass().getResourceAsStream(name4);
+                pnlBackgrounds.setVisible(false);
+                pnlOption.setVisible(true);
+            }
+		});
+		pnlBackgrounds.add(btnBackground4);
+		//Zheng's bg 3 button ends
+		
+
 
 		JButton btnHome_3 = new JButton("Back");
 		btnHome_3.addActionListener(new ActionListener() {
@@ -228,6 +288,20 @@ public class Menu {
 			}
 		});
 		pnlBackgrounds.add(btnHome_3);
+		
+		
+		
+//		JButton btnBackground5 = new JButton();
+//		btnBackground5.setIcon(new ImageIcon("4.jpg"));		
+//		btnBackground5.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+////				Board.backgroundImage = getClass().getResourceAsStream(btnBackground5.getIcon().toString());
+//                pnlBackgrounds.setVisible(false);
+//                pnlOption.setVisible(true);
+//            }
+//		});
+//		pnlBackgrounds.add(btnBackground5);
 
 
 		JButton btnOption2 = new JButton("Background");

@@ -24,7 +24,7 @@ public class Main extends JFrame {
         BufferedImage myImage = null;
 
         try {
-            myImage = ImageIO.read(Main.class.getResourceAsStream("1.jpg"));
+            myImage = ImageIO.read(Board.backgroundImage);
 //            myImage = ImageIO.read(Main.class.getResourceAsStream("2.jpg"));
         } catch (IOException ex) {
             System.out.println("Could not find the file");
